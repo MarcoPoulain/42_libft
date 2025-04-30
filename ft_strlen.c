@@ -6,16 +6,17 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 13:18:36 by kassassi          #+#    #+#             */
-/*   Updated: 2025/04/28 13:24:50 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/04/30 13:10:14 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
+	i = 0;
 	while (*str)
 	{
 		str++;
