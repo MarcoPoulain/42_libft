@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:44:05 by kassassi          #+#    #+#             */
-/*   Updated: 2025/04/30 15:47:17 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/01 13:08:05 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 }
 /*
 #include <stdio.h>
-#include <string.h>
-
+#include <bsd/string.h>
+// A compiler avec l option -lsbd
 void	test_strlcpy(const char *src, size_t size)
 {
 	char stand_dest[50] = {0};

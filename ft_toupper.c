@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 11:35:22 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/01 14:07:39 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/01 11:13:43 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/01 12:09:27 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_toupper(int c)
 {
-	if (c < 0 || c > 255)
-		return (0);
-	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }
 /*#include <stdio.h>
 #include <ctype.h>
+void	ft_test_toupper(int c)
+{
+	printf("Standard fonction pour: %c elle retourne: %c\n", c, toupper(c));
+	printf("Fonction perso pour: %c elle retourne: %c\n\n", c, ft_toupper(c));
+}
 int	main(void)
 {
-	printf("%d\n", ft_isalpha('c'));
-	printf("%d\n", ft_isalpha('8'));
-	printf("%d\n", ft_isalpha('\n'));
-	printf("%d\n", ft_isalpha(342));
-	printf("%d\n", isalpha(342));
-	printf("%d\n", ft_isalpha(121));
+	ft_test_toupper(97);
+	ft_test_toupper(122);
+	ft_test_toupper(50);
+	ft_test_toupper('h');
+	ft_test_toupper('.');
+	ft_test_toupper(2000);
 	return (0);
 }*/

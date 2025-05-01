@@ -1,32 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 11:35:22 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/01 14:07:39 by kassassi         ###   ########.fr       */
+/*   Created: 2025/04/29 12:03:56 by kassassi          #+#    #+#             */
+/*   Updated: 2025/04/29 14:21:37 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	*ft_memcpy(void *dest, const void *src, size_t count)
 {
-	if (c < 0 || c > 255)
-		return (0);
-	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	unsigned char	*ptrdest;
+	unsigned char	*ptrsrc;
+	size_t			i;
+
+	if (!dest && !src)
+		return (dest);
+	ptrdest = (unsigned char *)dest;
+	ptrsrc = (unsigned char *)src;
+	i = 0;
+	while (i < count)
+	{
+		ptrdest[i] = ptrsrc[i];
+		i++;
+	}
+	return (dest);
 }
 /*#include <stdio.h>
-#include <ctype.h>
+#include <string.h>
 int	main(void)
 {
-	printf("%d\n", ft_isalpha('c'));
-	printf("%d\n", ft_isalpha('8'));
-	printf("%d\n", ft_isalpha('\n'));
-	printf("%d\n", ft_isalpha(342));
-	printf("%d\n", isalpha(342));
-	printf("%d\n", ft_isalpha(121));
+	char *strsrc = "INVADE";
+	char strdest[] = "PeaceandLove";
+
+	printf("%s\n", strdest);
+	ft_memcpy(strdest, strsrc, 5);
+
+	printf("%s\n", strdest);
+
 	return (0);
 }*/

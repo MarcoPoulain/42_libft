@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 11:35:22 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/01 14:07:39 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/01 11:42:55 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/01 12:09:51 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_tolower(int c)
 {
-	if (c < 0 || c > 255)
-		return (0);
-	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
 /*#include <stdio.h>
 #include <ctype.h>
+void	ft_test_tolower(int c)
+{
+	printf("Standard fonction pour: %c elle retourne: %c\n", c, tolower(c));
+	printf("Fonction perso pour: %c elle retourne: %c\n\n", c, ft_tolower(c));
+}
 int	main(void)
 {
-	printf("%d\n", ft_isalpha('c'));
-	printf("%d\n", ft_isalpha('8'));
-	printf("%d\n", ft_isalpha('\n'));
-	printf("%d\n", ft_isalpha(342));
-	printf("%d\n", isalpha(342));
-	printf("%d\n", ft_isalpha(121));
+	ft_test_tolower(65);
+	ft_test_tolower(90);
+	ft_test_tolower(42);
+	ft_test_tolower('H');
+	ft_test_tolower('.');
+	ft_test_tolower(2000);
 	return (0);
 }*/

@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 16:05:37 by kassassi          #+#    #+#             */
-/*   Updated: 2025/04/30 18:54:27 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/01 11:41:03 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	src_size = ft_strlen(src);
 	if (dest_size >= size)
 		return (size + src_size);
-	while (src[i] && (dest_size + i < size - 1))	
+	while (src[i] && (dest_size + i < size - 1))
 	{
 		dest[dest_size + i] = src[i];
 		i++;
