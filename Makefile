@@ -1,5 +1,5 @@
 CC = gcc
-CFLAFS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 SRC = ft_isalnum.c \
 	ft_isalpha.c \
@@ -19,10 +19,10 @@ SRC = ft_isalnum.c \
 	ft_strrchr.c \
 	ft_strncmp.c \
 	ft_memchr.c
-OBJ = $(SRC:.c=.o)
+OBJ := $(SRC:.c=.o)
 
 all : $(NAME)
-$(NAME) : $(NAME) $(OBJ)
+$(NAME) : $(OBJ)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
@@ -30,9 +30,17 @@ $(NAME) : $(NAME) $(OBJ)
 	$(CC) $(CFLAGS) -c $*.c -o $*.o
 
 clean :
-	rm -f $(OBJ)
+	rm -f $(OBJ) run_test
 
 fclean : clean
-	rm -f $(NAME)
+	rm -f $(NAME) libft.so
 
 re : fclean all
+
+test:
+	$(CC) $(CFLAGS) tests/test_$(TEST).c $(SRC) -o run_test
+	./run_test
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) -c $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)

@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 16:24:41 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/01 17:36:06 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/03 15:35:20 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,4 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		i++;
 	}
 	return (NULL);
-}
-#include <stdio.h>
-#include <string.h>
-void	test_memchr(const char *str, int c, size_t n)
-{
-	printf("Fontion standard: %s\n", (const char *)memchr(str, c, n));
-	printf("Ma fonction: %s\n\n", (const char *)ft_memchr(str, c, n));
-}
-
-int	main(void)
-{
-	test_memchr("ABCDEFG", 'D', 7);
-	return (0);
 }

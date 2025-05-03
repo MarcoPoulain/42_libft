@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 12:03:56 by kassassi          #+#    #+#             */
-/*   Updated: 2025/04/29 14:21:37 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/03 16:28:03 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t count)
 	unsigned char	*ptrsrc;
 	size_t			i;
 
-	if (!dest && !src)
+	if (!dest && !src && count > 0)
 		return (dest);
 	ptrdest = (unsigned char *)dest;
 	ptrsrc = (unsigned char *)src;
@@ -30,17 +30,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t count)
 	}
 	return (dest);
 }
-/*#include <stdio.h>
-#include <string.h>
-int	main(void)
-{
-	char *strsrc = "INVADE";
-	char strdest[] = "PeaceandLove";
-
-	printf("%s\n", strdest);
-	ft_memcpy(strdest, strsrc, 5);
-
-	printf("%s\n", strdest);
-
-	return (0);
-}*/

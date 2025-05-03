@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 12:13:44 by kassassi          #+#    #+#             */
-/*   Updated: 2025/04/28 12:42:24 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/03 14:23:24 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,3 @@ int	ft_isalnum(int c)
 		|| (c >= 65 && c <= 90)
 		|| (c >= 97 && c <= 122));
 }
-/*#include <stdio.h>
-int	main(void)
-{
-	printf("%d\n", ft_isalnum('9'));
-	printf("%d\n", ft_isalnum('Z'));
-	printf("%d\n", ft_isalnum('d'));
-	printf("%d\n", ft_isalnum(42));
-	printf("%d\n", ft_isalnum(180));
-	return (0);
-}*/
