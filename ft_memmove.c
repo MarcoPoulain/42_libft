@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:29:34 by kassassi          #+#    #+#             */
-/*   Updated: 2025/04/29 16:00:40 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/03 16:37:04 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memmove(void *dest, const void *src, size_t count)
 	unsigned char	*ptrsrc;
 	size_t			i;
 
-	if (!dest && !src)
+	if (!dest && !src && count > 0)
 		return (dest);
 	ptrdest = (unsigned char *)dest;
 	ptrsrc = (unsigned char *)src;

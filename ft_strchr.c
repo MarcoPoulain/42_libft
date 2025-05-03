@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 11:51:38 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/01 15:28:42 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/03 17:48:03 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,3 @@ char	*ft_strchr(const char *str, int c)
 		return ((char *)pchar);
 	return (NULL);
 }
-/*#include <stdio.h>
-#include <string.h>
-void	test_strchr(const char *str, int c)
-{
-	printf("Standard fonction: %s, pour %d\n", strchr(str, c), c);
-	printf("Ma fonction: %s, pour %d\n\n", ft_strchr(str, c), c);
-}
-int	main(void)
-{
-	test_strchr("abcdef", 'd');
-	test_strchr("", '\0');
-	test_strchr("abcdef", 'g');
-	test_strchr("abcdef", '\0');
-	test_strchr("abcdef", 'a');
-	test_strchr("abcdcef", 'c');
-
-	return (0);
-}*/

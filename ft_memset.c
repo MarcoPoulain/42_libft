@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 15:58:38 by kassassi          #+#    #+#             */
-/*   Updated: 2025/04/29 10:36:54 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/03 17:38:18 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,3 @@ void	*ft_memset(void *dest, int ch, size_t count)
 	}
 	return (dest);
 }
-/*#include <stdio.h>
-int	main(void)
-{
-	char	tab[10] = {'a','b','c','d','e','f','g','h','i','j'};
-	char	*ptr;
-	int		i;
-
-	ptr = ft_memset(tab, '0', 5);
-	while (i < 10)
-	{
-		printf("%c\n", *ptr);
-		i++;
-		ptr++;
-	}
-	return (0);
-}*/
