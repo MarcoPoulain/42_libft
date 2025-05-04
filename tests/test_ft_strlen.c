@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   test_ft_strlen.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 16:05:37 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/04 14:06:25 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/04 14:21:29 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/04 14:36:19 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
+#include <stdio.h>
+#include <string.h>
 
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+void	test_strlen(const char *str)
 {
-	size_t	i;
-	size_t	dest_size;
-	size_t	src_size;
+	printf("Le retour de la fonction standard pour '%s' = %zu\n", str, strlen(str));
+	printf("Le retour pour ma fonction pour '%s' = %zu\n\n", str, ft_strlen(str));
+}
 
-	i = 0;
-	dest_size = ft_strlen(dest);
-	src_size = ft_strlen(src);
-	if (dest_size >= size)
-		return (size + src_size);
-	while (src[i] && (dest_size + i < size - 1))
+int	main(void)
+{
+	const char	*charray[] = {"abcde", "", "tu boules ou tu bouges", "\n\n\n\n"};
+	int			i = 0;
+
+	while (i < 4)
 	{
-		dest[dest_size + i] = src[i];
+		test_strlen(charray[i]);
 		i++;
 	}
-	if (dest_size + i < size)
-			dest[dest_size + i] = '\0';
-	return (dest_size + src_size);
 }

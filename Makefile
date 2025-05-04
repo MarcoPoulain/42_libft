@@ -18,7 +18,8 @@ SRC = ft_isalnum.c \
 	ft_strchr.c \
 	ft_strrchr.c \
 	ft_strncmp.c \
-	ft_memchr.c
+	ft_memchr.c \
+	ft_memcmp.c
 OBJ := $(SRC:.c=.o)
 
 all : $(NAME)
@@ -38,7 +39,7 @@ fclean : clean
 re : fclean all
 
 test:
-	$(CC) $(CFLAGS) tests/test_$(TEST).c $(SRC) -o run_test
+	$(CC) $(CFLAGS) tests/test_$(TEST).c $(SRC) -lbsd -o run_test
 	./run_test
 
 so:
