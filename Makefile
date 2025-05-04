@@ -32,7 +32,7 @@ $(NAME) : $(OBJ)
 	$(CC) $(CFLAGS) -c $*.c -o $*.o
 
 clean :
-	rm -f $(OBJ) run_test
+	rm -f $(OBJ) run_test prog
 
 fclean : clean
 	rm -f $(NAME) libft.so
@@ -42,7 +42,3 @@ re : fclean all
 test:
 	$(CC) $(CFLAGS) tests/test_$(TEST).c $(SRC) -lbsd -o run_test
 	./run_test
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) -c $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
