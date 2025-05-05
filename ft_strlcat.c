@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 16:05:37 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/04 14:06:25 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:01:29 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		i++;
 	}
 	if (dest_size + i < size)
-			dest[dest_size + i] = '\0';
+		dest[dest_size + i] = '\0';
 	return (dest_size + src_size);
 }
