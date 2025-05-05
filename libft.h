@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:14:40 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/05 12:00:25 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/05 15:26:55 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	*ft_memset(void *dest, int ch, size_t count);
 void	*ft_memcpy(void *dest, const void *src, size_t count);
 void	*ft_memmove(void *dest, const void *src, size_t count);
 void	*ft_memchr(const void *s, int c, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);

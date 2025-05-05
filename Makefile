@@ -21,7 +21,8 @@ SRC = ft_isalnum.c \
 	ft_memchr.c \
 	ft_memcmp.c \
 	ft_strnstr.c \
-	ft_atoi.c
+	ft_atoi.c \
+	ft_calloc.c
 OBJ := $(SRC:.c=.o)
 
 all : $(NAME)
@@ -41,5 +42,5 @@ fclean : clean
 re : fclean all
 
 test:
-	$(CC) $(CFLAGS) tests/test_$(TEST).c $(SRC) -lbsd -o run_test
+	$(CC) $(CFLAGS) tests/test_$(TEST) $(SRC) -lbsd -o run_test
 	./run_test
