@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 15:48:28 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/06 16:02:47 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/06 18:31:31 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (j < ft_strlen(s1))
 		dest[i++] = s1[j++];
 	j = 0;
-	while (j  < ft_strlen(s2))
+	while (j < ft_strlen(s2))
 		dest[i++] = s2[j++];
 	dest[i] = '\0';
 	return (dest);
