@@ -24,7 +24,8 @@ SRC = ft_isalnum.c \
 	ft_atoi.c \
 	ft_calloc.c \
 	ft_strdup.c \
-	ft_substr.c
+	ft_substr.c \
+	ft_strjoin.c
 OBJ := $(SRC:.c=.o)
 
 all : $(NAME)
@@ -33,7 +34,7 @@ $(NAME) : $(OBJ)
 	ar rc $(NAME) $(OBJ);
 	ranlib $(NAME);
 
-%.o : %.c
+%.o : %.c libft.h
 	$(CC) $(CFLAGS) -c $*.c -o $*.o
 
 clean :
