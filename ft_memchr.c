@@ -6,11 +6,14 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 16:24:41 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/04 13:39:35 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/06 12:56:22 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// The memchr() function scans the initial n bytes of the memory area
+// pointed to by s for the first instance of c
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

@@ -6,11 +6,14 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 11:27:06 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/03 14:18:51 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/06 12:48:40 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// The bzero() function erases the data in the n bytes of the memory 
+// starting at the location pointed to by str
 
 void	ft_bzero(void *str, size_t n)
 {

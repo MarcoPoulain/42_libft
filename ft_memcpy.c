@@ -6,11 +6,14 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 12:03:56 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/03 16:28:03 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/06 13:00:37 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// The memcpy() function copies n bytes from memory area src to
+// memory area dest
 
 void	*ft_memcpy(void *dest, const void *src, size_t count)
 {

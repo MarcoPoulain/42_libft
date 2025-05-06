@@ -6,11 +6,14 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 14:34:35 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/04 14:57:46 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/06 13:22:24 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Returns a pointer to the last occurrence of c 
+// in the string str, or NULL if not found
 
 char	*ft_strrchr(const char *str, int c)
 {

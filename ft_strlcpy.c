@@ -6,11 +6,14 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:44:05 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/04 14:18:37 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/06 13:17:22 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Copies up to size - 1 characters from src to dest null-terminating the result
+// Returns the total length of src.
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {

@@ -6,11 +6,14 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 16:05:37 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/05 11:01:29 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/06 13:15:51 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// Appends src to the end of dest ensuring the total length does not exceed size
+// Returns the initial length of dest plus the length of src
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {

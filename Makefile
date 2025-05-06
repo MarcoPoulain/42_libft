@@ -23,13 +23,15 @@ SRC = ft_isalnum.c \
 	ft_strnstr.c \
 	ft_atoi.c \
 	ft_calloc.c \
-	ft_strdup.c
+	ft_strdup.c \
+	ft_substr.c
 OBJ := $(SRC:.c=.o)
 
 all : $(NAME)
+
 $(NAME) : $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	ar rc $(NAME) $(OBJ);
+	ranlib $(NAME);
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $*.c -o $*.o
@@ -45,3 +47,5 @@ re : fclean all
 test:
 	$(CC) $(CFLAGS) tests/test_$(TEST) $(SRC) -lbsd -o run_test
 	./run_test
+
+.PHONY: all clean fclean re test

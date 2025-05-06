@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 15:58:38 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/06 13:04:02 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/06 12:30:58 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/06 14:02:35 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-// The memset() function fills the first count bytes of the memory area
-// pointed to by dest with the constant byte ch
-
-void	*ft_memset(void *dest, int ch, size_t count)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char	*ptr;
-	unsigned char	c;
-	size_t			i;
+	char	*sub;
+	size_t	i;
 
-	ptr = (unsigned char *)dest;
-	c = (unsigned char)ch;
-	i = 0;
-	while (i < count)
+	if (start >= ft_strlen(s))
 	{
-		*ptr = c;
-		i++;
-		ptr++;
+		sub = malloc(1);
+		if (!sub)
+			return (NULL);
+		sub[0] = '\0';
+		return (sub);
 	}
-	return (dest);
+	i = 0;
+	while (s[start + i] != '\0' && i < len)
+		i++;
+	sub = malloc(sizeof(char) * (i + 1));
+	if (!sub)
+		return (NULL);
+	i = 0;
+	while (s[start + i] != '\0' && i < len)
+	{
+		sub[i] = s[start + i];
+		i++;
+	}
+	sub[i] = '\0';
+	return (sub);
 }
