@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   test_ft_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 15:58:38 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/07 09:58:04 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/07 18:52:11 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/07 19:15:18 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-// The memset() function fills the first count bytes of the memory area
-// pointed to by dest with the constant byte ch
-
-void	*ft_memset(void *dest, int c, size_t n)
+int	main(void)
 {
-	unsigned char	*ptr;
-	unsigned char	ch;
-	size_t			i;
+	char const *s = "    Test    de split     héhé !";
+	char		c = '\0';
+	char		**split = ft_split(s, c);
+	size_t		i = 0;
 
-	ptr = (unsigned char *)dest;
-	ch = (unsigned char)c;
-	i = 0;
-	while (i < n)
+	while(split[i] != NULL)
 	{
-		*ptr = ch;
+		printf("%s\n", split[i]);
+		free(split[i]);
 		i++;
-		ptr++;
 	}
-	return (dest);
+	return (0);
 }

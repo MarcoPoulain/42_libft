@@ -6,14 +6,14 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 17:01:27 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/06 19:29:52 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/07 11:58:42 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-size_t	ft_increment(char const *s1, char const *set)
+static size_t	ft_increment(char const *s1, char const *set)
 {
 	size_t	i;
 	size_t	j;
@@ -35,7 +35,7 @@ size_t	ft_increment(char const *s1, char const *set)
 	return (i);
 }
 
-size_t	ft_decrement(char const *s1, char const *set)
+static size_t	ft_decrement(char const *s1, char const *set)
 {
 	size_t	d;
 	size_t	j;

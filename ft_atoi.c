@@ -6,13 +6,13 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 11:52:02 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/05 14:38:22 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/07 11:57:20 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-const char	*ft_removespaces(const char *str)
+static const char	*ft_removespaces(const char *str)
 {
 	const char	*ptr;
 
@@ -22,7 +22,7 @@ const char	*ft_removespaces(const char *str)
 	return (ptr);
 }
 
-const char	*ft_checksign(const char *str, int *sign)
+static const char	*ft_checksign(const char *str, int *sign)
 {
 	const char	*ptr;
 
