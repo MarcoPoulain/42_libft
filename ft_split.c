@@ -6,44 +6,47 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 11:37:54 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/07 19:08:09 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/08 13:19:25 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static size_t	ft_moveptr(char const *s, size_t n, char c)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[n + i] == c)
-		i++;
-	return (n + i);
-}
-
 static size_t	ft_wordsnbr(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	size_t	wordscount;
 
-	i = 0;
-	k = 0;
-	while (s[k])
+	wordscount = 0;
+	while (*s)
 	{
-		j = 0;
-		while (s[k] && s[k] != c)
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
 		{
-			j++;
-			k++;
+			wordscount++;
+			while (*s && *s != c)
+				s++;
 		}
-		k = ft_moveptr(s, k, c);
-		if (j > 0)
-			i++;
 	}
-	return (i);
+	return (wordscount);
+}
+
+static char	*ft_wordalloc(char const *s, char c)
+{
+	size_t	charcount;
+	char	*wordalloc;
+
+	charcount = 0;
+	while (*s && *s != c)
+	{
+		charcount ++;
+		s++;
+	}
+	wordalloc = malloc(sizeof(char) * (charcount + 1));
+	if (!wordalloc)
+		return (NULL);
+	return (wordalloc);
 }
 
 static char	**ft_freeall(char **tab, size_t limit)
@@ -58,28 +61,26 @@ static char	**ft_taballoc(char const *s, size_t size, char c)
 {
 	char	**wordsalloc;
 	size_t	i;
-	size_t	j;
-	size_t	k;
 
 	i = 0;
-	k = 0;
 	wordsalloc = malloc(sizeof(char *) * (size + 1));
 	if (!wordsalloc)
 		return (NULL);
-	while (s[k])
+	while (*s && i < size)
 	{
-		j = 0;
-		while (s[k] && s[k++] != c)
-			j++;
-		k = ft_moveptr(s, k, c);
-		if (j > 0)
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
 		{
-			wordsalloc[i] = malloc(sizeof(char) * (j + 1));
+			wordsalloc[i] = ft_wordalloc(s, c);
 			if (!wordsalloc[i])
 				return (ft_freeall(wordsalloc, i));
 			i++;
+			while (*s && *s != c)
+				s++;
 		}
 	}
+	wordsalloc[i] = NULL;
 	return (wordsalloc);
 }
 
@@ -88,25 +89,23 @@ char	**ft_split(char const *s, char c)
 	char	**wordstab;
 	size_t	i;
 	size_t	j;
-	size_t	k;
 
 	wordstab = ft_taballoc(s, ft_wordsnbr(s, c), c);
+	i = 0;
 	if (!wordstab)
 		return (NULL);
-	i = 0;
-	k = 0;
-	while (s[k])
+	while (*s)
 	{
-		j = 0;
-		while (s[k] && s[k] != c)
-			wordstab[i][j++] = s[k++];
-		if (j > 0)
+		while (*s && *s == c)
+			s++;
+		if (*s && *s != c)
 		{
+			j = 0;
+			while (*s && *s != c)
+				wordstab[i][j++] = *s++;
 			wordstab[i][j] = '\0';
 			i++;
 		}
-		k = ft_moveptr(s, k, c);
 	}
-	wordstab[i] = NULL;
 	return (wordstab);
 }
