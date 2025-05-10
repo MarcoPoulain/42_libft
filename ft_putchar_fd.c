@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/09 15:53:37 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/10 09:27:39 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/10 09:57:56 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/10 10:15:44 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include <unistd.h>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*morphs;
-	size_t	i;
-
-	i = 0;
-	morphs = malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!morphs)
-		return (NULL);
-	while (s[i])
-	{
-		morphs[i] = f(i, s[i]);
-		i++;
-	}
-	morphs[i] = '\0';
-	return (morphs);
+	write(fd, &c, 1);
 }

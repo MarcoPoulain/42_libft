@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   test_ft_putstr_fd.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/09 15:53:37 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/10 09:27:39 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/10 10:56:07 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/10 11:06:30 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "../libft.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	main(void)
 {
-	char	*morphs;
-	size_t	i;
+	int	fd;
 
-	i = 0;
-	morphs = malloc(sizeof(char) * (ft_strlen(s) + 1));
-	if (!morphs)
-		return (NULL);
-	while (s[i])
+	fd = open("putstr.txt", O_WRONLY | O_CREAT | O_APPEND, 0666);
+	if (fd == -1)
 	{
-		morphs[i] = f(i, s[i]);
-		i++;
+		printf("error");
+		return (1);
 	}
-	morphs[i] = '\0';
-	return (morphs);
+	ft_putstr_fd("Gravé dans le marbre binaire", fd);
+	close(fd);
+	return (0);
 }
