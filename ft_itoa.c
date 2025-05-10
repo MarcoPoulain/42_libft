@@ -6,17 +6,17 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 10:59:43 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/09 14:24:03 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/10 12:46:39 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static int	ft_malloca(int n)
+static int	ft_malloca(long n)
 {
-	unsigned int	i;
-	int				sign;
+	long	i;
+	int		sign;
 
 	if (n == 0)
 		return (1);
@@ -54,9 +54,9 @@ static char	*ft_reversea(char *a)
 	return (a);
 }
 
-static char	*ft_writea(char *a, unsigned int n, int sign)
+static char	*ft_writea(char *a, long n, int sign)
 {
-	unsigned int	i;
+	long	i;
 
 	i = 0;
 	if (n == 0)
@@ -78,23 +78,20 @@ static char	*ft_writea(char *a, unsigned int n, int sign)
 
 char	*ft_itoa(int n)
 {
-	char			*a;
-	int				sign;
+	char	*a;
+	int		sign;
+	long	nb;
 
+	nb = n;
 	sign = 42;
-	a = malloc(sizeof(char) * (ft_malloca(n) + 1));
+	a = malloc(sizeof(char) * (ft_malloca(nb) + 1));
 	if (!a)
 		return (NULL);
 	if (n < 0)
 	{
-		if (n == -2147483648)
-		{
-			ft_strlcpy(a, "-2147483648", 12);
-			return (a);
-		}
-		n = -n;
+		nb = -nb;
 		sign = -42;
 	}
-	a = ft_writea(a, n, sign);
+	a = ft_writea(a, nb, sign);
 	return (ft_reversea(a));
 }
