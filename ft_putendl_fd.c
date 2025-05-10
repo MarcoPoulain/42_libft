@@ -6,11 +6,11 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 11:18:35 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/10 11:20:53 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/10 11:29:56 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
- #include "libft.h"
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
