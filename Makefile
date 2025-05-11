@@ -35,7 +35,12 @@ SRC = ft_isalnum.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
+
+BONUS_SRC = ft_lstnew_bonus.c
+
 OBJ := $(SRC:.c=.o)
+
+BONUS_OBJ:= $(BONUS_SRC:.c=.o)
 
 all : $(NAME)
 
@@ -47,15 +52,19 @@ $(NAME) : $(OBJ)
 	$(CC) $(CFLAGS) -c $*.c -o $*.o
 
 clean :
-	rm -f $(OBJ) run_test prog
+	rm -f $(OBJ) $(BONUS_OBJ)  run_test prog
 
 fclean : clean
 	rm -f $(NAME) libft.so *.txt
 
 re : fclean all
 
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar rc $(NAME) $(OBJ) $(BONUS_OBJ)
+	ranlib $(NAME)
+
 test:
 	@$(CC) $(CFLAGS) tests/test_$(TEST) $(SRC) -lbsd -o run_test
 	./run_test
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re test bonus
