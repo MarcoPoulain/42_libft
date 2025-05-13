@@ -38,7 +38,8 @@ SRC = ft_isalnum.c \
 
 BONUS_SRC = ft_lstnew_bonus.c \
 			ft_lstadd_front_bonus.c \
-			ft_lstsize_bonus.c
+			ft_lstsize_bonus.c \
+			ft_lstlast_bonus.c
 ALL_SRC = $(SRC) $(BONUS_SRC)
 
 OBJ := $(SRC:.c=.o)
