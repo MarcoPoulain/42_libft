@@ -36,7 +36,9 @@ SRC = ft_isalnum.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c
 
-BONUS_SRC = ft_lstnew_bonus.c
+BONUS_SRC = ft_lstnew_bonus.c \
+			ft_lstadd_front_bonus.c
+ALL_SRC = $(SRC) $(BONUS_SRC)
 
 OBJ := $(SRC:.c=.o)
 
@@ -64,7 +66,7 @@ bonus: $(OBJ) $(BONUS_OBJ)
 	ranlib $(NAME)
 
 test:
-	@$(CC) $(CFLAGS) tests/test_$(TEST) $(SRC) -lbsd -o run_test
+	@$(CC) $(CFLAGS) tests/test_$(TEST) $(ALL_SRC) -lbsd -o run_test
 	./run_test
 
 .PHONY: all clean fclean re test bonus

@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:14:40 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/10 17:27:18 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/13 16:06:11 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ typedef struct s_list
 }	t_list;
 
 t_list	*ft_lstnew(void	*content);
+void	ft_lstadd_front(t_list **list, t_list *new);
 
 #endif
