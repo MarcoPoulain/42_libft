@@ -54,8 +54,8 @@ BONUS_OBJ:= $(BONUS_SRC:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	ar rc $(NAME) $(OBJ);
-	ranlib $(NAME);
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
 
 %.o : %.c libft.h
 	$(CC) $(CFLAGS) -c $*.c -o $*.o
