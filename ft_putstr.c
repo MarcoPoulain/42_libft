@@ -6,7 +6,7 @@
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 16:46:46 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/21 16:56:46 by kassassi         ###   ########.fr       */
+/*   Updated: 2025/05/21 17:16:22 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_putstr(char *s)
 	}
 }
 
+/*
 int	main(void)
 {
 	char	*s = "test\n";
@@ -33,3 +34,4 @@ int	main(void)
 	ft_putstr(s);
 	return (0);
 }
+*/
