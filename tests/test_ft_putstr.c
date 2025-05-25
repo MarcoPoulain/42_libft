@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   test_ft_putstr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kassassi <kassassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 16:46:46 by kassassi          #+#    #+#             */
-/*   Updated: 2025/05/25 15:20:41 by kassassi         ###   ########.fr       */
+/*   Created: 2025/05/25 15:16:09 by kassassi          #+#    #+#             */
+/*   Updated: 2025/05/25 15:26:12 by kassassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <unistd.h>
+#include "../libft.h"
 
-void	ft_putstr(char *s)
+int	main(void)
 {
-	while (*s)
-	{
-		ft_putchar(*s);
-		s++;
-	}
+	char	*s = "Yoh\n";
+
+	ft_putstr(s);
+	return (0);
 }

@@ -35,7 +35,8 @@ SRC = ft_isalnum.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c	\
-	ft_putstr.c
+	ft_putstr.c \
+	ft_putchar.c
 
 BONUS_SRC = ft_lstnew_bonus.c \
 			ft_lstadd_front_bonus.c \
